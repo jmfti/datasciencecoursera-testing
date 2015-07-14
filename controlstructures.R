@@ -104,3 +104,67 @@ for (i in 1:1000){
   ## do stuff here
 }
 
+
+## FUNCTIONS IN R
+
+# like any other languages out there functions can be implemented 
+# the difference is that R will return the last expression
+
+#example
+add <- function(x, y){
+  x+y
+}
+
+
+add(c(1,2,3), c(4,5,6))
+
+
+# getting the numbers of a vector above 10
+
+above10 <- function(x){
+  e <- x > 10
+  # e has a logical vector that tells if the expression is true for that element
+  x[e] # will return elements of x greater than 10
+}
+
+above10(c(8,9,10,11,12,13,14))
+
+# elements can be pushed into a vector with c function like c( c(1,2), 3) or append(c(1,2), 1)
+
+columnmean <- function(mat){
+  result <- numeric()
+  for(i in seq_len(ncol(mat))){
+    result <- c(result, mean(mat[,i]))
+  }
+  result
+}
+
+columnmean(matrix(1:6, 2,3))
+
+
+# its better to initialize the vector if we know how many elements will be stored
+
+columnmean2 <- function(mat){
+  nc <- ncol(mat)
+  result <- numeric(nc)
+  for(i in 1:nc){
+    result[i] <- mean(mat[,i])
+  }
+  result
+}
+
+columnmean(matrix(1:6, 2,3))
+
+## sometimes data has NA elements. to remove it automatically we can pass na.rm=[TRUE|FALSE] to mean() function
+
+columnmean3 <- function(mat, removeNA = TRUE){
+  nc <- ncol(mat)
+  result <- numeric(nc)
+  for(i in 1:nc){
+    result[i] <- mean(mat[,i], na.rm = TRUE)
+  }
+  result
+  
+}
+
+
