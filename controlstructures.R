@@ -167,4 +167,18 @@ columnmean3 <- function(mat, removeNA = TRUE){
   
 }
 
+# arguments for functions
+# functions can be passed as arguments to another functions, just like Python or some other 
+# scripting languages
 
+# functions can also be nested, so a function can be defined inside another function
+# arguments can be matched positionally or by name
+
+data <- rnorm(100) # 100 elements with normal distribution N(0,1)
+sd(data) # standar deviation
+sd(x=data) # equivalent
+sd(x=data, na.rm=FALSE)
+sd(na.rm=FALSE, x=data)
+sd(na.rm=FALSE, data)
+
+# all those function calls are equivalent
