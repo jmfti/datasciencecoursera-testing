@@ -182,3 +182,77 @@ sd(na.rm=FALSE, x=data)
 sd(na.rm=FALSE, data)
 
 # all those function calls are equivalent
+
+
+## more aboute functions
+
+# free variables will be searched in the parent's environment 
+# so it will be like an inverse in-depth search in the environment tree
+
+make.power <- function(n){
+  pow <- function(x){
+    x^n
+    # n will be searched in the parent's environment
+  }
+  pow
+  
+}
+
+square <- make.power(2)
+cube <- make.power(3)
+
+square(5) # 5^2
+cube(3)   # 3^3
+
+
+
+## OPTIMIZATION IN R
+
+# optim and nlm are the functions used to optimize functions
+# if you want to maximize or minimize with some restrictions on variables it is
+# what has to be used
+
+# the idea in R is to make something like in javascript
+# we can set environment variables to keep data that we need
+
+# using ls(environment(function)) we can get the environment variables for the specified function
+
+ls(environment(square))
+
+
+## dates and times in R
+
+# Dates are represented by the Date class
+# Times are represented by POSIXct or the POSIXlt class
+# Dates are stored internally as the number of days since 1970-1-1
+# times are stored internally as the number of seconds 1970-1-1 (unix timestamp)
+
+x <- as.Date("1970-01-01")
+x
+
+unclass(x) # it will print the internal representation of the date
+
+unclass(as.Date("1970-01-05"))
+
+weekdays(x)
+months(x)
+quarters(x)
+
+x <- Sys.time()
+x
+unclass(x)
+
+p <- as.POSIXlt(x)
+p
+unclass(p)
+
+names(unclass(p))
+names(unclass(x))
+
+# strptime is to get a date formatted 
+
+?strptime # for help
+
+y <- strptime("2001-01-05 14:24:31","%Y-%m-%d %H:%M:%S")
+
+x-y
