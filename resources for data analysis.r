@@ -24,3 +24,23 @@
 # Jeff Hammerbacher https://www.quora.com/Jeff-Hammerbacher/Introduction-to-Data-Science-Data-Sets
 # Gregory Piatsetski http://www.kdnuggets.com/gps.html
 # http://blog.mortardata.com/post/67652898761/6-dataset-lists-curated-by-data-scientists
+
+## more data sets
+# http://snap.stanford.edu/data/ data sets focused on network data and machine learning
+# http://archive.ics.uci.edu/ml/ variety of data focused on machine learning
+# http://www.kdnuggets.com/datasets/index.html
+# http://lib.stat.cmu.edu/datasets/ CMU one of the famous canonical sets of data 
+# http://www.ncbi.nlm.nih.gov/geo/ gene expression is focused on data that comes
+# from human genomic experiments or other organismal genomics experiments
+# http://arxiv.org/help/bulk_data
+# http://aws.amazon.com/es/public-data-sets/ amazon public data sets
+
+
+## Some API's with R interfaces
+# twitter with twitteR https://cran.r-project.org/web/packages/twitteR/index.html
+# figshare and rfigshare https://cran.r-project.org/web/packages/rfigshare/index.html
+# PLoS and rplos https://cran.r-project.org/web/packages/rplos/rplos.pdf
+# rOpenSci https://ropensci.org/packages/index.html allows access to various sources of data focused
+# on academics
+# RFacebook https://cran.r-project.org/web/packages/Rfacebook/
+# RGoogleMaps https://cran.r-project.org/web/packages/RgoogleMaps/index.html
